@@ -118,14 +118,16 @@ const Header = () => {
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
-                <Toolbar sx={{ backgroundColor: "#ffff", color: "#647787" }}>
+                <Toolbar sx={{ backgroundColor: "#ffff", color: "#647787", padding: "0 4.5rem !important" }}>
+                    <Box display="flex" alignItems="center" gap="4.5rem">
+
 
                     <Typography
                         variant="h6"
                         noWrap
                         component="div"
                         sx={{ display: { xs: 'none', sm: 'block', color: "#1875F0", fontWeight: "bold" } }}
-                    >
+                        >
                         TransMonitor
                     </Typography>
                     <Search>
@@ -135,8 +137,9 @@ const Header = () => {
                         <StyledInputBase
                             placeholder="Search…"
                             inputProps={{ 'aria-label': 'search' }}
-                        />
+                            />
                     </Search>
+                            </Box>
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: "center", gap: "2rem", cursor: "pointer" }}>
 
