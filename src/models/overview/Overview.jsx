@@ -1,13 +1,16 @@
+import { Box } from '@mui/material'
 import React from 'react'
 import ChartOrders from '../../components/chart/ChartOrders'
 import Cards from '../../components/transactions/Card'
+import Table from '../../table/Table'
 
 const Overview = () => {
   return (
-    <div>
+    <Box>
       <Cards />
-      <ChartOrders/>
-    </div>
+      <ChartOrders />
+      <Table/>
+    </Box>
   )
 }
 

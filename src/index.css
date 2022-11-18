@@ -13,17 +13,13 @@ body {
 .app {
   display: flex;
   position: relative;
+
 }
 .daterange {
   outline: none;
   padding: 0.4rem 1rem;
   color: #7F8FA4;
-  /* width: 18rem; */
   border-radius: 3px;
   border: 0.5px solid #333;
   cursor: pointer;
-  /* font-size: 1.2rem; */
 }
-  /* &:hover {
-    border: 1.5px solid #2b2d42;
-  } */

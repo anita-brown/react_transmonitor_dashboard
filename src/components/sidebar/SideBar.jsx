@@ -37,7 +37,7 @@ const SideBar = () => {
     const [selected, setSelected] = useState("Overview");
     return (
         <ProSidebarProvider  >
-            <Sidebar width='20%' collapsed={isCollapsed} style={{ height: "100vh", background: "#ffff", color: "#647787" }}>
+            <Sidebar width='20%' collapsed={isCollapsed} style={{ minHeight: "100vh", background: "#ffff", color: "#647787" }}>
                 <Menu iconShape="square">
                     {/* LOGO AND MENU ICON */}
                     <MenuItem
