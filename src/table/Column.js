@@ -53,6 +53,6 @@ export const columns = [
     field: "status",
     headerName: "",
     flex: 1,
-    renderCell: RenderStatus,
+    // renderCell: "status",
   },
 ];

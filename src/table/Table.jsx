@@ -19,7 +19,7 @@ function CustomToolbar() {
 const Table = () => {
   return (
     <Box padding="2rem">
-      <Typography>Payments</Typography>
+      <Typography variant="h5">Payments</Typography>
       <Box
         m="40px 0 0 0"
         height="75vh"
@@ -41,7 +41,9 @@ const Table = () => {
             backgroundColor: "#FFFFFF",
           },
           "& .MuiDataGrid-footerContainer": {
-            borderTop: "none",
+              borderTop: "none",
+            //   display: "flex",
+            //   justifyContent: "flex-start"
           },
           "& .MuiCheckbox-root": {
             color: "#414042",
