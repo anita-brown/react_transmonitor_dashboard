@@ -1,6 +1,8 @@
-import { Box, IconButton,Button, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import vw from "../assets/vw.png";
 import { tableData } from "../data/data";
+
+
 const RenderImage = () => {
   return (
     <Box display="flex" alignItems="center" gap="2rem">

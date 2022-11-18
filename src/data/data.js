@@ -1,5 +1,21 @@
-import { Box } from "@mui/material";
-import vw from "../assets/vw.png";
+export const data = [
+  {
+    transaction_volume: "Daily Transaction Volume",
+    volume: "2,342",
+  },
+  {
+    transaction_volume: "Daily Transaction Value",
+    volume: "₦4,000,000",
+  },
+  {
+    transaction_volume: "Total Transaction Volume",
+    volume: "452,000",
+  },
+  {
+    transaction_volume: "Total Transaction Value",
+    volume: "₦4,000,000",
+  },
+];
 
 export const tableData = [
   {

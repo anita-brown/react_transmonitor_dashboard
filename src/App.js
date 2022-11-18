@@ -1,11 +1,9 @@
 import { Routes, Route } from "react-router-dom";
-import {useState } from "react"
 import Header from "./components/header/Header";
 import Overview from "./models/overview/Overview";
 import SideBar from "./components/sidebar/SideBar";
 
 function App() {
-    const [isSidebar, setIsSidebar] = useState(true);
   return (
     <div>
       <Header />
