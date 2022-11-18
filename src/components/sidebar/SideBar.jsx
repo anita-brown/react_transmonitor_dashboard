@@ -1,34 +1,33 @@
-import { ProSidebarProvider } from 'react-pro-sidebar'; import React from 'react'
+import React from 'react'
 import { useState } from "react";
-import { ProSidebar, Menu, MenuItem, useProSidebar } from "react-pro-sidebar";
-import { Sidebar, SubMenu } from 'react-pro-sidebar';
-
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
-import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
-import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
-import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
-import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
-import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
-import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
-import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
-import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
-import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
+import { Sidebar, Menu, MenuItem, ProSidebarProvider } from "react-pro-sidebar";
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { Box, Button, IconButton, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import { fontSize, padding } from '@mui/system';
-import { hover } from '@testing-library/user-event/dist/hover';
-const Item = ({ title, to, icon, selected, setSelected }) => {
-   
+import overview from "../../assets/overview.png"
+import payment from "../../assets/payment.png"
+import reconcilied from "../../assets/reconcilled.png"
+import unreconcilied from "../../assets/un_reconcilled.png"
+import dot from "../../assets/dot.png"
+import allorder from "../../assets/allorder.png"
+import order from "../../assets/order.png"
+import pending from "../../assets/pending.png"
+import profile from "../../assets/profile.png"
+
+const Item = ({ title, to, image, selected, setSelected }) => {
+
     return (
         <MenuItem
             active={selected === title}
-         
+            display="flex" alignItems="center"
             onClick={() => setSelected(title)}
-            icon={icon}
+            
         >
-            <Typography fontSize="13px">{title}</Typography>
+            <Box display="flex" alignItems="center" gap="1.2rem">
+
+                <img src={image} alt="" />
+                <Typography fontSize="13px">{title}</Typography>
+            </Box>
             <Link to={to} />
         </MenuItem>
     );
@@ -36,137 +35,141 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
 const SideBar = () => {
     const [isCollapsed, setIsCollapsed] = useState(false);
     const [selected, setSelected] = useState("Overview");
-  return (
-      <ProSidebarProvider  >
-          <Sidebar width='20%' collapsed={isCollapsed} style={{ height: "100vh", background: "#ffff", color: "#647787" }}>
-              <Menu iconShape="square">
-                  {/* LOGO AND MENU ICON */}
-                  <MenuItem
-                      onClick={() => setIsCollapsed(!isCollapsed)}
-                      icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
-                      style={{
-                          margin: "10px 0 10px 0",
-                        //   color: colors.grey[100],
-                      }}
-                  >
-                      {!isCollapsed && (
-                          <Box
-                              display="flex"
-                              justifyContent="space-between"
-                              alignItems="center"
-                              ml="15px"
-                          >
-                              <Button sx={{
-                                  backgroundColor: "#27AE60", borderRadius: "30px", fontWeight: 700, color: "#fff", padding: "10px 40px 10px 40px", fontSize: "11px", ':hover': {
-                                      bgcolor: 'green', // theme.palette.primary.main
-                                      color: 'white',
-                                  }}}
+    return (
+        <ProSidebarProvider  >
+            <Sidebar width='20%' collapsed={isCollapsed} style={{ height: "100vh", background: "#ffff", color: "#647787" }}>
+                <Menu iconShape="square">
+                    {/* LOGO AND MENU ICON */}
+                    <MenuItem
+                        onClick={() => setIsCollapsed(!isCollapsed)}
+                        icon={isCollapsed ? <ChevronRightIcon /> : undefined}
+                        style={{
+                            margin: "10px 0 10px 0",
+                        }}
+                    >
+                        {!isCollapsed && (
+                            <Box
+                                display="flex"
+                                justifyContent="space-between"
+                                alignItems="center"
+                                ml="15px"
+                            >
+                                <Button sx={{
+                                    backgroundColor: "#27AE60", borderRadius: "30px", fontWeight: 700, color: "#fff", padding: "10px 40px 10px 40px", fontSize: "11px", ':hover': {
+                                        bgcolor: 'green', // theme.palette.primary.main
+                                        color: 'white',
+                                    }
+                                }}
                                 //   color={colors.grey[100]}
-                              >
-                                  GENERATE INVOICE
-                              </Button>
-                              <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
-                                  <MenuOutlinedIcon />
-                              </IconButton>
-                          </Box>
-                      )}
-                  </MenuItem>
+                                >
+                                    GENERATE INVOICE
+                                </Button>
+                                <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
+                                    <ChevronRightIcon />
+                                </IconButton>
+                            </Box>
+                        )}
+                    </MenuItem>
 
-                  <Box paddingLeft={isCollapsed ? undefined : "10%"}>
-                      <Typography
-                          variant="h6"
-                          fontSize="15px"
-                          sx={{ m: "15px 0 5px 20px" }}
-                      >
-                          Main
-                      </Typography>
-                      <Item
-                          title="Overview"
-                          fontSize="1px"
-                          to="/"
-                          icon={<HomeOutlinedIcon />}
-                          selected={selected}
-                          setSelected={setSelected}
-                      />
+                    <Box paddingLeft={isCollapsed ? undefined : "10%"}>
+                        <Typography
+                            variant="h6"
+                            fontSize="15px"
+                            sx={{ m: "15px 0 5px 20px" }}
+                        >
+                            Main
+                        </Typography>
+                        <Item
+                            title="Overview"
+                            fontSize="1px"
+                            to="/"
+                            image={overview}
+                            selected={selected}
+                            setSelected={setSelected}
+                        />
 
-                      <Typography
-                          variant="h6"
-                          fontSize="15px"
-                          sx={{ m: "15px 0 5px 20px" }}
-                      >
-                          Payments
-                      </Typography>
-                      <Item
-                          title="All Payments"
-                          to="/all-payments"
-                          icon={<PeopleOutlinedIcon />}
-                          selected={selected}
-                          setSelected={setSelected}
-                      />
-                      <Item
-                          title="Reconcilled Payments"
-                          to="/reconcilled-payments"
-                          icon={<ContactsOutlinedIcon />}
-                          selected={selected}
-                          setSelected={setSelected}
-                      />
-                      <Item
-                          title="Un - Reconcilled Payments"
-                          to="/un-reconcilled-payments"
-                          icon={<ReceiptOutlinedIcon />}
-                          selected={selected}
-                          setSelected={setSelected}
-                      />
-                      <Item
-                          title="Manual Settlement"
-                          to="/manual-settlement"
-                          icon={<ReceiptOutlinedIcon />}
-                          selected={selected}
-                          setSelected={setSelected}
-                      />
+                        <Typography
+                            variant="h6"
+                            fontSize="15px"
+                            sx={{ m: "15px 0 5px 20px" }}
+                        >
+                            Payments
+                        </Typography>
+                        <Item
+                            title="All Payments"
+                            to="/all-payments"
+                            image={payment}
+                            selected={selected}
+                            setSelected={setSelected}
+                        />
+                        <Item
+                            title="Reconcilled Payments"
+                            to="/reconcilled-payments"
+                            image={reconcilied}
+                            selected={selected}
+                            setSelected={setSelected}
+                        />
+                        <Item
+                            title="Un - Reconcilled Payments"
+                            to="/un-reconcilled-payments"
+                            image={unreconcilied}
+                            selected={selected}
+                            setSelected={setSelected}
+                        />
+                        <Item
+                            title="Manual Settlement"
+                            to="/manual-settlement"
+                            image={dot}
+                            selected={selected}
+                            setSelected={setSelected}
+                        />
 
-                      <Typography
-                          variant="h6"
-                          fontSize="15px"
-                          sx={{ m: "15px 0 5px 20px" }}
-                      >
-                          Orders
-                      </Typography>
-                      <Item
-                          title="All Orders"
-                          to="/all-orders"
-                          icon={<PersonOutlinedIcon />}
-                          selected={selected}
-                          setSelected={setSelected}
-                      />
-                      <Item
-                          title="Pending Orders"
-                          to="/pending-order"
-                          icon={<CalendarTodayOutlinedIcon />}
-                          selected={selected}
-                          setSelected={setSelected}
-                      />
-                      <Item
-                          title="Reconcilled Orders"
-                          to="/reconcilled-order"
-                          icon={<HelpOutlineOutlinedIcon />}
-                          selected={selected}
-                          setSelected={setSelected}
-                      />
+                        <Typography
+                            variant="h6"
+                            fontSize="15px"
+                            sx={{ m: "15px 0 5px 20px" }}
+                        >
+                            Orders
+                        </Typography>
+                        <Item
+                            title="All Orders"
+                            to="/all-orders"
+                            image={allorder}
+                            selected={selected}
+                            setSelected={setSelected}
+                        />
+                        <Item
+                            title="Pending Orders"
+                            to="/pending-order"
+                            image={pending}
+                            selected={selected}
+                            setSelected={setSelected}
+                        />
+                        <Item
+                            title="Reconcilled Orders"
+                            to="/reconcilled-order"
+                            image={order}
+                            selected={selected}
+                            setSelected={setSelected}
+                        />
+                        <Box marginTop="1.5rem">
 
-                      <Item
-                          title="Merchant Profile"
-                          to="/merchant-profile"
-                          icon={<BarChartOutlinedIcon />}
-                          selected={selected}
-                          setSelected={setSelected}
-                      />
-                   
-                  </Box>
-              </Menu>
-          </Sidebar>
-      </ProSidebarProvider>
-  )
+
+                            <Item
+
+                                title="Merchant Profile"
+                                to="/merchant-profile"
+                                image={profile}
+                                selected={selected}
+                                setSelected={setSelected}
+                            />
+                        </Box>
+
+                    </Box>
+                </Menu>
+            </Sidebar>
+        </ProSidebarProvider>
+    )
 }
 
 export default SideBar
