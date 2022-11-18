@@ -13,17 +13,7 @@ const RenderImage = () => {
     </Box>
   );
 };
-const RenderStatus = () => {
-  return (
-    <Box gap="2rem">
-      {tableData.map((item) => (
-        <Button>
-          <Typography fontSize="8px">{item.status}</Typography>
-        </Button>
-      ))}
-    </Box>
-  );
-};
+
 export const columns = [
   {
     field: "item",
@@ -53,6 +43,6 @@ export const columns = [
     field: "status",
     headerName: "",
     flex: 1,
-    // renderCell: "status",
+   
   },
 ];
