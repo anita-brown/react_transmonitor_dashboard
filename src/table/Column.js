@@ -1,6 +1,6 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import vw from "../assets/vw.png";
-import { tableData } from "../data/data";
+;
 
 
 const RenderImage = () => {
