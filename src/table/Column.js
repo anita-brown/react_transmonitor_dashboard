@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import vw from "../assets/vw.png";
-;
+
 
 
 const RenderImage = () => {
