@@ -12,7 +12,7 @@ const RenderImage = () => {
       </Typography>
     </Box>
   );
-};
+}
 
 export const columns = [
   {
