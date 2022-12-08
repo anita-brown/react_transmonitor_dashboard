@@ -1,13 +1,5 @@
 # React_transmonitor_dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img width="1407" alt="Screen Shot 2022-12-08 at 8 36 00 PM" src="https://user-images.githubusercontent.com/84588107/206550911-1f81638b-be4a-4cdd-86c1-9403b21ff91b.png">
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
